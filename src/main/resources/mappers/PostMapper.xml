@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hwanjin.hizini.domain.dao.PostMapper">
+	<select id="selectPost" resultType="HashMap">
+		SELECT ID, TITLE
+		FROM HWANJIN.POST
+	</select> 
+</mapper>
