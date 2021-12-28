@@ -17,15 +17,18 @@ public class UserService {
 	public UserDTO setUser(UserDTO userDTO) {
 		UserDTO user = userMapper.selectUser(userDTO);
 		if(user == null) {
-			userMapper.insertUser(userDTO.getName());
-			System.out.println(userDTO.getId());
+			userMapper.insertUser(userDTO);
 		}
-		
 		return userMapper.selectUser(userDTO);
-		
+	}
+	
+	public UserDTO getUser(int id) {
+		UserDTO user = new UserDTO(id);
+		return userMapper.selectUser(user);
 	}
 
-	public int updateUser(UserDTO userDTO) {
-		return userMapper.updateUser(userDTO);
+	public UserDTO updateUser(UserDTO userDTO) {
+		userMapper.updateUser(userDTO);
+		return userMapper.selectUser(userDTO);
 	}
 }

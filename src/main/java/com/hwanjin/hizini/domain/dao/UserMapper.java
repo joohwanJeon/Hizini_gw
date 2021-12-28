@@ -8,7 +8,7 @@ public interface UserMapper {
 	
 	public UserDTO selectUser(UserDTO userDTO);
 	
-	public int insertUser(String name);
+	public int insertUser(UserDTO userDTO);
 	
 	public int updateUser(UserDTO userDTO);
 }

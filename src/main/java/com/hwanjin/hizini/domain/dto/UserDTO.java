@@ -14,4 +14,9 @@ public class UserDTO {
 	private int quiz3;
 	private int quiz4;
 	private int quiz5;
+	
+	public UserDTO(int id) {
+		super();
+		this.id = id;
+	}
 }

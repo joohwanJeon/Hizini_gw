@@ -30,10 +30,16 @@ public class UserController {
 		return ResponseEntity.ok(new MessageDTO<>(result, "OK"));
 	}
 	
-//	@RequestMapping(value="/getBoard", method=RequestMethod.GET)
-//	public ResponseEntity<MessageDTO<BoardDTO>> getBoard(@RequestParam int id) {
-//		BoardDTO board = boardService.getBoard(id);
-//		return ResponseEntity.ok(new MessageDTO<>(board, "OK"));
-//	}
+	@RequestMapping(value="/getUser", method=RequestMethod.GET)
+	public ResponseEntity<MessageDTO<UserDTO>> getBoard(@RequestParam int id) {
+		UserDTO user = userService.getUser(id);
+		return ResponseEntity.ok(new MessageDTO<>(user, "OK"));
+	}
+	
+	@RequestMapping(value="/updateUser", method=RequestMethod.POST)
+	public ResponseEntity<MessageDTO<UserDTO>> updateUser(@RequestBody UserDTO userDTO) {
+		UserDTO result = userService.updateUser(userDTO);
+		return ResponseEntity.ok(new MessageDTO<>(result, "OK"));
+	}
 
 }

@@ -21,4 +21,9 @@ public class BoardService {
 	public BoardDTO getBoard(int id) {
 		return boardMapper.selectBoard(id);
 	}
+	
+	public BoardDTO updateBoard(BoardDTO board) {
+		boardMapper.updateBoard(board);
+		return boardMapper.selectBoard(board.getId());
+	}
 }

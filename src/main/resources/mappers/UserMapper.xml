@@ -24,7 +24,7 @@
 				</if>
 	</select>
 
-	<insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+	<insert id="insertUser" parameterType="UserDTO" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO QUIZ.USER (
 			NAME 
 		) VALUES (
@@ -34,23 +34,25 @@
 	
 	<update id="updateUser" parameterType="UserDTO">
 		UPDATE QUIZ.USER
-		SET		
-		<if test="quiz1 != null">
-			QUIZ1 = #{quiz1},
-		</if>
-		<if test="quiz2 != null">
-			QUIZ2 = #{quiz2},
-		</if>
-		<if test="quiz3 != null">
-			QUIZ3 = #{quiz3},
-		</if>
-		<if test="quiz4 != null">
-			QUIZ4 = #{quiz4},
-		</if>
-		<if test="quiz5 != null">
-			QUIZ5 = #{quiz5},
-		</if>
-				
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="quiz1 != 0">
+				QUIZ1 = #{quiz1},
+			</if>
+			<if test="quiz2 != 0">
+				QUIZ2 = #{quiz2},
+			</if>
+			<if test="quiz3 != 0">
+				QUIZ3 = #{quiz3},
+			</if>
+			<if test="quiz4 != 0">
+				QUIZ4 = #{quiz4},
+			</if>
+			<if test="quiz5 != 0">
+				QUIZ5 = #{quiz5},
+			</if>
+		</trim>
+		WHERE 
+			ID = #{id}	
 	</update> 
 </mapper>
  

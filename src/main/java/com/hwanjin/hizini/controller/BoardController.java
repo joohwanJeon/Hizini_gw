@@ -36,4 +36,9 @@ public class BoardController {
 		return ResponseEntity.ok(new MessageDTO<>(board, "OK"));
 	}
 
+	@RequestMapping(value="/updateBoard", method=RequestMethod.POST)
+	public ResponseEntity<MessageDTO<BoardDTO>> updateBoard(@RequestBody BoardDTO boardDTO) {
+		BoardDTO board = boardService.updateBoard(boardDTO);
+		return ResponseEntity.ok(new MessageDTO<>(board, "OK"));
+	}
 }

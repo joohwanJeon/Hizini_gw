@@ -9,4 +9,6 @@ public interface BoardMapper {
 	public List<BoardDTO> selectBoards();
 
 	public BoardDTO selectBoard(int id);
+	
+	public int updateBoard(BoardDTO board);
 }

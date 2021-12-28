@@ -8,6 +8,7 @@
 				, TITLE
 				, IMAGE
 				, CONTENT
+				, CHECKED
 		FROM 
 				QUIZ.BOARD
 	</select>
@@ -17,10 +18,18 @@
 				, TITLE
 				, IMAGE
 				, CONTENT
+				, CHECKED
 		FROM 
 				QUIZ.BOARD
 		WHERE	
 				ID = #{id}
 	</select> 
+	
+	<update id="updateBoard" parameterType="BoardDTO">
+		UPDATE QUIZ.BOARD 	
+		SET		CHECKED = #{checked}
+		WHERE 
+			ID = #{id}
+	</update> 
 </mapper>
  
