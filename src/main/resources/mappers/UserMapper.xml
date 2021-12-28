@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hwanjin.hizini.domain.dao.UserMapper">
+	<select id="selectUser" resultType="UserDTO">
+		SELECT 
+				ID
+				, NAME
+				, PERMISSION
+				, QUIZ1
+				, QUIZ2
+				, QUIZ3
+				, QUIZ4
+				, QUIZ5
+		FROM 
+				QUIZ.USER
+		WHERE 
+				1=1
+				<if test="id != 0">
+					AND ID = #{id}
+				</if>
+				<if test="name != null">
+					AND NAME = #{name}
+				</if>
+	</select>
+
+	<insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO QUIZ.USER (
+			NAME 
+		) VALUES (
+			#{name}
+		)
+	</insert>
+	
+	<update id="updateUser" parameterType="UserDTO">
+		UPDATE QUIZ.USER
+		SET		
+		<if test="quiz1 != null">
+			QUIZ1 = #{quiz1},
+		</if>
+		<if test="quiz2 != null">
+			QUIZ2 = #{quiz2},
+		</if>
+		<if test="quiz3 != null">
+			QUIZ3 = #{quiz3},
+		</if>
+		<if test="quiz4 != null">
+			QUIZ4 = #{quiz4},
+		</if>
+		<if test="quiz5 != null">
+			QUIZ5 = #{quiz5},
+		</if>
+				
+	</update> 
+</mapper>
+ 
