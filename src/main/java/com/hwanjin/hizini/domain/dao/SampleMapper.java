@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.hwanjin.hizini.domain.dto.BoardDTO;
 
-public interface BoardMapper {
+public interface SampleMapper {
 	
 	public List<BoardDTO> selectBoards();
 
