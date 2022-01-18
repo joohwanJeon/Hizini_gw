@@ -2,13 +2,13 @@ package com.hwanjin.hizini.domain.dao;
 
 import java.util.List;
 
-import com.hwanjin.hizini.domain.dto.BoardDTO;
+import com.hwanjin.hizini.domain.dto.SampleDTO;
 
 public interface SampleMapper {
 	
-	public List<BoardDTO> selectBoards();
+	public List<SampleDTO> selectSamples();
 
-	public BoardDTO selectBoard(int id);
+	public SampleDTO selectSample(SampleDTO sampleDTO);
 	
-	public int updateBoard(BoardDTO board);
+	public int updateBoard(SampleDTO sampleDTO);
 }

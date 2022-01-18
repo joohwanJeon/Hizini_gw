@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hwanjin.hizini.domain.dao.PostMapper">
+<mapper namespace="com.hwanjin.hizini.domain.dao.SampleMapper">
 	<insert id="createPost" parameterType="PostDTO" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO HWANJIN.POST (
 			TITLE 
@@ -57,12 +57,4 @@
 		LIMIT #{count}
 				</if>
 	</select> 
-	
-	<update id="updatePost" parameterType="PostDTO">
-		UPDATE	
-	</update>
-	
-	<update id="deletePost">
-		
-	</update>
 </mapper>

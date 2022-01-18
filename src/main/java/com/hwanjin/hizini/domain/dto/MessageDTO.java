@@ -19,4 +19,10 @@ public class MessageDTO<T> {
 		this.data = data;
 	}
 	
+	public MessageDTO(T data, String returnCode) {
+		super();
+		this.data = data;
+		this.returnCode = returnCode;
+	}
+	
 }
