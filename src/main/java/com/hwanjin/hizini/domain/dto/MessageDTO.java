@@ -1,10 +1,12 @@
 package com.hwanjin.hizini.domain.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
+@Builder
 public class MessageDTO<T> {
 	private T data;
 	private String returnCode;
@@ -17,12 +19,5 @@ public class MessageDTO<T> {
 	public MessageDTO(T data) {
 		super();
 		this.data = data;
-	}
-	
-	public MessageDTO(T data, String returnCode) {
-		super();
-		this.data = data;
-		this.returnCode = returnCode;
-	}
-	
+	}	
 }
